@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CareerMoney365 | Earn • Skills • Jobs • Money</title>
+  <meta name="description" content="CareerMoney365 - Learn online earning, career skills, job guidance and money management tips."/>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <div class="logo"></div>
+        <div>
+          <div style="font-size:16px">CareerMoney365</div>
+          <div style="font-size:12px;color:var(--muted)">Earn • Skills • Jobs • Money</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a class="chip" href="blog.html">Blog</a>
+        <a class="chip" href="about.html">About</a>
+        <a class="chip" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="kicker">Welcome</div>
+      <h1>Smart earning & career guidance for India 🇮🇳</h1>
+      <p>Yaha aapko milenge online earning ideas, career skills, job interview tips, money management and practical guides — simple Hindi language me.</p>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn primary" href="blog.html">Read Blog</a>
+        <a class="btn" href="about.html">Know More</a>
+      </div>
+    </section>
+
+    <h2 class="section-title">Latest Posts</h2>
+    <section class="grid" id="latestPosts"></section>
+
+    <div class="footer">
+      © <span id="y"></span> CareerMoney365 • Made with GitHub Pages
+    </div>
+  </main>
+
+  <script src="assets/index.js"></script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

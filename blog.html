@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog | CareerMoney365</title>
+  <meta name="description" content="CareerMoney365 blog posts - online earning, career skills, jobs, and money tips."/>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <div class="logo"></div>
+        <div>
+          <div style="font-size:16px">CareerMoney365</div>
+          <div style="font-size:12px;color:var(--muted)">Earn • Skills • Jobs • Money</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a class="chip" href="index.html">Home</a>
+        <a class="chip" href="blog.html">Blog</a>
+        <a class="chip" href="about.html">About</a>
+        <a class="chip" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="kicker">CareerMoney365 Blog</div>
+      <h1>All Posts</h1>
+      <p>Search karke ya category select karke posts quickly dhoondhiye.</p>
+    </section>
+
+    <div class="searchbar">
+      <input id="q" type="text" placeholder="Search: earning, skills, job, resume..." />
+      <select id="cat">
+        <option value="all">All Categories</option>
+      </select>
+    </div>
+
+    <section class="grid" id="allPosts"></section>
+
+    <div class="footer">
+      © <span id="y"></span> CareerMoney365
+    </div>
+  </main>
+
+  <script src="assets/blog.js"></script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
