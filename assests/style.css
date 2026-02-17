@@ -1,113 +1,57 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 body {
-  background: #fff5f5;
-  color: #222;
-}
-
-/* Navbar */
-nav {
-  background: linear-gradient(90deg, #b30000, #ff1a1a);
-  padding: 15px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1a0000, #660000, #990000);
   color: white;
 }
 
-nav h1 {
-  font-size: 22px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Hero Section */
+/* HERO SECTION */
 .hero {
-  padding: 60px 8%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.hero h2 {
-  font-size: 34px;
-  margin-bottom: 20px;
-  color: #b30000;
+.hero-content h1 {
+  font-size: 3rem;
+  color: #ff4d4d;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
 }
 
-.hero p {
-  font-size: 18px;
-  margin-bottom: 30px;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  margin-top: 30px;
 }
 
 .btn {
-  display: inline-block;
   padding: 12px 25px;
-  background: #ff1a1a;
-  color: white;
-  text-decoration: none;
   border-radius: 30px;
-  margin: 5px;
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+  font-weight: bold;
   transition: 0.3s;
+}
+
+.primary {
+  background: linear-gradient(45deg, #ff0000, #ff6600);
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid #ff4d4d;
+  color: white;
 }
 
 .btn:hover {
-  background: #b30000;
-}
-
-/* Blog Section */
-.section {
-  padding: 50px 8%;
-}
-
-.section h3 {
-  margin-bottom: 30px;
-  font-size: 24px;
-  color: #b30000;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h4 {
-  margin-bottom: 10px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #b30000;
-  color: white;
-  margin-top: 40px;
+  transform: scale(1.1);
 }
