@@ -1,40 +1,437 @@
-/* =========================================
-   CareerMoney365 - Main Website Styles
-   ========================================= */
+/* =========================================================
+   CareerMoney365 - Master Website CSS
+   ========================================================= */
+
+:root {
+  --primary: #103766;
+  --primary-dark: #0b2748;
+  --accent: #efc07b;
+  --red: #d10000;
+  --text: #222;
+  --muted: #667085;
+  --light: #f5f7fa;
+  --white: #ffffff;
+  --border: #e5e7eb;
+  --shadow: 0 8px 25px rgba(0,0,0,0.08);
+  --radius: 14px;
+}
+
+/* =========================
+   GLOBAL
+   ========================= */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #222;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* =========================================
-   HEADER
-   ========================================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-.header {
-    background: #ffffff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #e5e7eb;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   COMMON HEADER
+   ========================= */
+
+.nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.brand:hover {
+  color: var(--primary-dark);
 }
 
 .logo {
-    font-size: 22px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), #288cfa);
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.chip:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* =========================
+   PAGE HERO
+   ========================= */
+
+.hero {
+  margin: 35px auto 25px;
+  padding: 35px 30px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.kicker {
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.2;
+}
+
+.hero p {
+  margin: 0 auto;
+  max-width: 760px;
+  color: var(--muted);
+}
+
+/* =========================
+   BLOG / CONTENT CARD
+   ========================= */
+
+.post {
+  width: min(850px, 100%);
+  margin: 25px auto 40px;
+  padding: 35px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.post h1 {
+  color: var(--primary);
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+.post h2 {
+  color: var(--primary);
+  font-size: clamp(24px, 4vw, 32px);
+  margin: 35px 0 14px;
+  line-height: 1.3;
+}
+
+.post h3 {
+  color: var(--primary);
+  font-size: 22px;
+  margin: 28px 0 12px;
+}
+
+.post p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.post ul,
+.post ol {
+  margin: 0 0 20px;
+  padding-left: 25px;
+}
+
+.post li {
+  margin-bottom: 8px;
+}
+
+.post img {
+  width: 100%;
+  max-width: 800px;
+  margin: 25px auto;
+  border-radius: 10px;
+}
+
+.post-content {
+  width: 100%;
+}
+
+.post-content strong {
+  color: var(--primary);
+}
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.searchbar {
+  width: min(850px, 100%);
+  margin: 0 auto 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.searchbar input,
+.searchbar select {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--white);
+  font-size: 15px;
+  outline: none;
+}
+
+.searchbar input:focus,
+.searchbar select:focus {
+  border-color: var(--primary);
+}
+
+/* =========================
+   POST GRID
+   ========================= */
+
+.grid,
+.posts {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: var(--white);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.11);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 9px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: var(--primary);
+  font-size: 21px;
+  line-height: 1.35;
+  margin: 0 0 10px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 0 15px;
+}
+
+.readbtn {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  padding: 10px 17px;
+  border-radius: 7px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.readbtn:hover {
+  background: #a90000;
+  color: var(--white);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  width: 100%;
+  margin-top: 45px;
+  padding: 25px 15px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+footer {
+  text-align: center;
+}
+
+/* =========================
+   TABLES
+   ========================= */
+
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: var(--white);
+}
+
+.post th,
+.post td {
+  border: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+}
+
+.post th {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    width: min(100% - 24px, 850px);
+  }
+
+  .nav-inner {
+    min-height: 65px;
+    padding: 8px 0;
+  }
+
+  .nav-links {
+    gap: 3px;
+  }
+
+  .chip {
+    padding: 7px 9px;
+    font-size: 13px;
+  }
+
+  .hero {
+    margin-top: 20px;
+    padding: 25px 18px;
+  }
+
+  .post {
+    padding: 22px 18px;
+    margin-top: 20px;
+    border-radius: 11px;
+  }
+
+  .post p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .grid,
+  .posts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .searchbar {
+    flex-direction: column;
+  }
+
+  .post table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .container {
+    width: calc(100% - 20px);
+  }
+
+  .nav-inner {
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    justify-content: flex-end;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .post h1 {
+    font-size: 28px;
+  }
+
+  .post h2 {
+    font-size: 23px;
+  }
+
+  .post {
+    padding: 18px 15px;
+  }
+   }    font-size: 22px;
     font-weight: 700;
     color: #d10000;
 }
