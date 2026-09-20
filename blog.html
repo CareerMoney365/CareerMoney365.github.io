@@ -1,52 +1,182 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>CareerMoney365</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CareerMoney365 Blog - Career, Jobs, Skills, Online Earning and Money related useful articles."
+    >
+
+    <meta
+        name="keywords"
+        content="CareerMoney365, career, jobs, earning, skills, money, financial freedom"
+    >
+
+    <meta name="author" content="CareerMoney365">
+
+    <title>CareerMoney365 Blog | Career, Jobs, Skills & Money</title>
+
+    <link rel="icon" href="favicon.ico">
 
     <link rel="stylesheet" href="assests/style.css">
+
 </head>
+
+
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">
-        <div class="logo"></div>
-        <div>
-          <div style="font-size:16px">CareerMoney365</div>
-          <div style="font-size:12px;color:var(--muted)">Earn • Skills • Jobs • Money</div>
+
+
+    <!-- HEADER -->
+
+    <header class="nav">
+
+        <div class="container nav-inner">
+
+
+            <!-- LOGO / BRAND -->
+
+            <a class="brand" href="index.html">
+
+                <div class="logo"></div>
+
+                <div>
+
+                    <div style="font-size:16px;">
+                        CareerMoney365
+                    </div>
+
+                    <div style="font-size:12px;color:var(--muted);">
+                        Earn • Skills • Jobs • Money
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="nav-links">
+
+                <a class="chip" href="index.html">
+                    Home
+                </a>
+
+                <a class="chip" href="blog.html">
+                    Blog
+                </a>
+
+                <a class="chip" href="about.html">
+                    About
+                </a>
+
+                <a class="chip" href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
         </div>
-      </a>
-      <nav class="nav-links">
-        <a class="chip" href="index.html">Home</a>
-        <a class="chip" href="blog.html">Blog</a>
-        <a class="chip" href="about.html">About</a>
-        <a class="chip" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="kicker">CareerMoney365 Blog</div>
-      <h1>All Posts</h1>
-      <p>Search karke ya category select karke posts quickly dhoondhiye.</p>
-    </section>
+    </header>
 
-    <div class="searchbar">
-      <input id="q" type="text" placeholder="Search: earning, skills, job, resume..." />
-      <select id="cat">
-        <option value="all">All Categories</option>
-      </select>
-    </div>
 
-    <section class="grid" id="allPosts"></section>
 
-    <div class="footer">
-      © <span id="y"></span> CareerMoney365
-    </div>
-  </main>
+    <!-- MAIN CONTENT -->
 
-  <script src="assests/blog.js"></script>
-<script src="assests/script.js"></script>
+    <main class="container">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="kicker">
+                CareerMoney365 Blog
+            </div>
+
+            <h1>
+                Career, Money & Growth
+            </h1>
+
+            <p>
+                Career, jobs, skills, online earning,
+                financial freedom और money से जुड़े
+                useful articles पढ़िए।
+            </p>
+
+        </section>
+
+
+
+        <!-- SEARCH & CATEGORY -->
+
+        <div class="searchbar">
+
+            <input
+                id="q"
+                type="text"
+                placeholder="Search: earning, skills, job, resume..."
+                aria-label="Search blog posts"
+            >
+
+
+            <select
+                id="cat"
+                aria-label="Select blog category"
+            >
+
+                <option value="all">
+                    All Categories
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- BLOG POSTS -->
+
+        <section
+            class="grid"
+            id="allPosts"
+        >
+
+            <!-- Posts will load automatically from posts.json -->
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            ©
+            <span id="y"></span>
+            CareerMoney365
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="assests/blog.js"></script>
+
+    <script src="assests/script.js"></script>
+
+
 </body>
+
 </html>
