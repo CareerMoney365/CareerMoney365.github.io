@@ -1,40 +1,210 @@
-const posts = [
-  {
-    title: "Financial Freedom क्यों ज़रूरी है? जानिए ऐसे कारण कि क्यों Financial Freedom हर इंसान के लिए ज़रूरी है",
-    category: "Money",
-    date: "2026-09-20",
-    image: "assests/feat.jpg",
-    description: "Financial Freedom क्या है, क्यों ज़रूरी है और इसे हासिल करने के practical तरीके जानिए।",
-    link: "my-first-blog.html"
-  }
-];
+// CareerMoney365 Blog System
 
-const postsContainer = document.getElementById("allPosts");
-const searchInput = document.getElementById("q");
-const categorySelect = document.getElementById("cat");
+let posts = [];
 
+async function loadPosts() {
+    try {
+        const response = await fetch("assests/posts/posts.json");
+
+        if (!response.ok) {
+            throw new Error("Posts data could not be loaded");
+        }
+
+        posts = await response.json();
+
+        showPosts(posts);
+        loadCategories(posts);
+
+    } catch (error) {
+        console.error("Blog Error:", error);
+
+        const container = document.getElementById("allPosts");
+
+        if (container) {
+            container.innerHTML = `
+                <div class="post">
+                    <h3>Blog temporarily unavailable</h3>
+                    <p>Posts load नहीं हो पाए। कृपया थोड़ी देर बाद फिर कोशिश करें।</p>
+                </div>
+            `;
+        }
+    }
+}
+
+
+// Create Blog Card
 function createPostCard(post) {
 
-  const card = document.createElement("article");
+    return `
+        <article class="post">
 
-  card.className = "card";
+            ${post.image ? `
+                <img 
+                    src="${post.image}" 
+                    alt="${post.title}"
+                    loading="lazy"
+                >
+            ` : ""}
 
-  card.innerHTML = `
-    <img src="${post.image}" alt="${post.title}">
+            <div class="post-content">
 
-    <h3>${post.title}</h3>
+                <div class="post-meta">
+                    ${post.category || "General"}
+                    ${post.date ? " • " + post.date : ""}
+                </div>
 
-    <p>
-      ${post.description}
-    </p>
+                <h2>${post.title}</h2>
 
-    <p style="font-size:13px;color:var(--muted);">
-      ${post.category} • ${post.date}
-    </p>
+                <p>
+                    ${post.description || ""}
+                </p>
 
-    <a class="readbtn" href="${post.link}">
-      Read More
-    </a>
+                <a href="${post.link}" class="read-more">
+                    Read More →
+                </a>
+
+            </div>
+
+        </article>
+    `;
+}
+
+
+// Show Posts
+function showPosts(list) {
+
+    const container = document.getElementById("allPosts");
+
+    if (!container) return;
+
+    if (!list.length) {
+
+        container.innerHTML = `
+            <div class="post">
+                <h3>No posts found</h3>
+                <p>इस category में अभी कोई article उपलब्ध नहीं है।</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML = list
+        .map(createPostCard)
+        .join("");
+}
+
+
+// Load Categories
+function loadCategories(list) {
+
+    const categorySelect = document.getElementById("cat");
+
+    if (!categorySelect) return;
+
+    const categories = [
+        ...new Set(
+            list
+                .map(post => post.category)
+                .filter(Boolean)
+        )
+    ];
+
+    categorySelect.innerHTML = `
+        <option value="all">All Categories</option>
+        ${categories
+            .map(category => `
+                <option value="${category}">
+                    ${category}
+                </option>
+            `)
+            .join("")}
+    `;
+}
+
+
+// Search
+const searchInput = document.getElementById("q");
+
+if (searchInput) {
+
+    searchInput.addEventListener("input", function () {
+
+        const searchText = this.value
+            .toLowerCase()
+            .trim();
+
+        const filteredPosts = posts.filter(post => {
+
+            return (
+                (post.title || "").toLowerCase().includes(searchText) ||
+                (post.description || "").toLowerCase().includes(searchText) ||
+                (post.category || "").toLowerCase().includes(searchText)
+            );
+
+        });
+
+        showPosts(filteredPosts);
+
+    });
+
+}
+
+
+// Category Filter
+const categorySelect = document.getElementById("cat");
+
+if (categorySelect) {
+
+    categorySelect.addEventListener("change", function () {
+
+        const selectedCategory = this.value;
+
+        const searchText = searchInput
+            ? searchInput.value.toLowerCase().trim()
+            : "";
+
+        let filteredPosts = posts;
+
+        if (selectedCategory !== "all") {
+
+            filteredPosts = filteredPosts.filter(
+                post => post.category === selectedCategory
+            );
+
+        }
+
+        if (searchText) {
+
+            filteredPosts = filteredPosts.filter(post => {
+
+                return (
+                    (post.title || "").toLowerCase().includes(searchText) ||
+                    (post.description || "").toLowerCase().includes(searchText) ||
+                    (post.category || "").toLowerCase().includes(searchText)
+                );
+
+            });
+
+        }
+
+        showPosts(filteredPosts);
+
+    });
+
+}
+
+
+// Footer Year
+const yearElement = document.getElementById("y");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+
+// Start Blog
+loadPosts();    </a>
   `;
 
   return card;
