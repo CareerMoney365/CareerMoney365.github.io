@@ -1,182 +1,138 @@
-<<!DOCTYPE html>>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+  <title>Blog | CareerMoney365</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Career, money, earning and financial freedom articles on CareerMoney365."
+  >
 
-    <meta
-        name="description"
-        content="CareerMoney365 Blog - Career, Jobs, Skills, Online Earning and Money related useful articles."
-    >
-
-    <meta
-        name="keywords"
-        content="CareerMoney365, career, jobs, earning, skills, money, financial freedom"
-    >
-
-    <meta name="author" content="CareerMoney365">
-
-    <title>CareerMoney365 Blog | Career, Jobs, Skills & Money</title>
-
-    <link rel="icon" href="favicon.ico">
-
-    <link rel="stylesheet" href="assests/style.css">
-
+  <link rel="stylesheet" href="assests/style.css">
 </head>
-
 
 <body>
 
+  <!-- HEADER -->
+  <header class="nav">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="brand">
+        <span class="logo">CareerMoney365</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="products.html">Books & Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+
+      <div class="chip">
+        CareerMoney365 Blog
+      </div>
+
+      <h1>Career, Money & Growth</h1>
+
+      <p>
+        Career, earning, money management and financial freedom
+        से जुड़ी practical जानकारी।
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- SEARCH -->
+  <main class="container">
+
+    <div
+      style="
+        display:flex;
+        gap:12px;
+        flex-wrap:wrap;
+        margin:30px 0;
+      "
+    >
+
+      <input
+        id="q"
+        type="search"
+        placeholder="Search articles..."
+        style="
+          flex:1;
+          min-width:220px;
+          padding:12px 15px;
+          border:1px solid #ddd;
+          border-radius:8px;
+          font-size:16px;
+        "
+      >
+
+      <select
+        id="cat"
+        style="
+          padding:12px 15px;
+          border:1px solid #ddd;
+          border-radius:8px;
+          font-size:16px;
+        "
+      >
+        <option value="">All Categories</option>
+      </select>
+
+    </div>
+
+
+    <!-- POSTS -->
+    <div
+      id="allPosts"
+      class="grid"
+    >
+      <div class="post">
+        <h2>Loading...</h2>
+        <p>Articles load हो रहे हैं...</p>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <p>
+        © <span id="y"></span> CareerMoney365.
+        All rights reserved.
+      </p>
 
-    <!-- HEADER -->
+    </div>
 
-    <header class="nav">
+  </footer>
 
-        <div class="container nav-inner">
 
+  <!-- SCRIPTS -->
+  <script src="assests/blog.js"></script>
+  <script src="assests/script.js"></script>
 
-            <!-- LOGO / BRAND -->
-
-            <a class="brand" href="index.html">
-
-                <div class="logo"></div>
-
-                <div>
-
-                    <div style="font-size:16px;">
-                        CareerMoney365
-                    </div>
-
-                    <div style="font-size:12px;color:var(--muted);">
-                        Earn • Skills • Jobs • Money
-                    </div>
-
-                </div>
-
-            </a>
-
-
-            <!-- NAVIGATION -->
-
-            <nav class="nav-links">
-
-                <a class="chip" href="index.html">
-                    Home
-                </a>
-
-                <a class="chip" href="blog.html">
-                    Blog
-                </a>
-
-                <a class="chip" href="about.html">
-                    About
-                </a>
-
-                <a class="chip" href="contact.html">
-                    Contact
-                </a>
-
-            </nav>
-
-
-        </div>
-
-    </header>
-
-
-
-    <!-- MAIN CONTENT -->
-
-    <main class="container">
-
-
-        <!-- HERO -->
-
-        <section class="hero">
-
-            <div class="kicker">
-                CareerMoney365 Blog
-            </div>
-
-            <h1>
-                Career, Money & Growth
-            </h1>
-
-            <p>
-                Career, jobs, skills, online earning,
-                financial freedom और money से जुड़े
-                useful articles पढ़िए।
-            </p>
-
-        </section>
-
-
-
-        <!-- SEARCH & CATEGORY -->
-
-        <div class="searchbar">
-
-            <input
-                id="q"
-                type="text"
-                placeholder="Search: earning, skills, job, resume..."
-                aria-label="Search blog posts"
-            >
-
-
-            <select
-                id="cat"
-                aria-label="Select blog category"
-            >
-
-                <option value="all">
-                    All Categories
-                </option>
-
-            </select>
-
-        </div>
-
-
-
-        <!-- BLOG POSTS -->
-
-        <section
-            class="grid"
-            id="allPosts"
-        >
-
-            <!-- Posts will load automatically from posts.json -->
-
-        </section>
-
-
-
-        <!-- FOOTER -->
-
-        <footer class="footer">
-
-            ©
-            <span id="y"></span>
-            CareerMoney365
-
-        </footer>
-
-
-    </main>
-
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="assests/blog.js"></script>
-
-    <script src="assests/script.js"></script>
-
+  <script>
+    document.getElementById("y").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
-
 </html>
