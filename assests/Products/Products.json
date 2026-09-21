@@ -1,0 +1,10 @@
+[
+  {
+    "id": "book-001",
+    "name": "CareerMoney365 E-Book",
+    "description": "Career, earning और financial freedom से जुड़ी practical guide.",
+    "price": 99,
+    "image": "assests/feat.jpg",
+    "paymentLink": "#"
+  }
+]
