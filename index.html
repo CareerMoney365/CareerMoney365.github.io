@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="UTF-8">
@@ -18,31 +19,805 @@
 
   <link rel="stylesheet" href="assests/style.css">
 
+
+  <style>
+
+    /* ========================================
+       COLORFUL HOMEPAGE
+    ======================================== */
+
+    :root {
+      --blue: #1261c9;
+      --dark-blue: #123b70;
+      --green: #079447;
+      --light-green: #e9fff3;
+      --light-blue: #eaf6ff;
+      --yellow: #fff5d6;
+      --purple: #f4ebff;
+      --orange: #ff9f1c;
+      --text: #173b68;
+    }
+
+
+    body {
+      color: var(--text);
+      background: #ffffff;
+    }
+
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    .color-header {
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e7edf5;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+    }
+
+
+    .color-header .nav-inner {
+      min-height: 70px;
+    }
+
+
+    .color-brand {
+      text-decoration: none;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+
+    .brand-career {
+      color: #123b70;
+    }
+
+
+    .brand-money {
+      color: #078d49;
+    }
+
+
+    .brand-number {
+      color: #1767d1;
+    }
+
+
+    .color-nav a {
+      text-decoration: none;
+      color: #163c69;
+      font-weight: 600;
+      margin-left: 22px;
+      transition: 0.2s;
+    }
+
+
+    .color-nav a:hover {
+      color: var(--green);
+    }
+
+
+    /* ========================================
+       HERO
+    ======================================== */
+
+    .color-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 0 80px;
+      background:
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(255, 220, 80, 0.40),
+          transparent 25%
+        ),
+        linear-gradient(
+          120deg,
+          #e7fbff 0%,
+          #ecfff4 50%,
+          #fffbea 100%
+        );
+    }
+
+
+    .color-hero::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: rgba(74, 201, 240, 0.20);
+      border-radius: 50%;
+      left: -130px;
+      bottom: -140px;
+    }
+
+
+    .color-hero::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      background: rgba(103, 218, 157, 0.20);
+      border-radius: 50%;
+      right: -70px;
+      top: -60px;
+    }
+
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+
+    .hero-chip {
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 30px;
+      background: #d6ffea;
+      color: #087640;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+
+    .color-hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 0 0 22px;
+      font-weight: 800;
+      color: #123b70;
+    }
+
+
+    .color-hero h1 .green {
+      color: #079447;
+    }
+
+
+    .color-hero h1 .blue {
+      color: #1261c9;
+    }
+
+
+    .hero-text {
+      max-width: 650px;
+      font-size: 20px;
+      line-height: 1.7;
+      color: #31557e;
+      margin-bottom: 28px;
+    }
+
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+
+    .hero-btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+
+    .hero-btn:hover {
+      transform: translateY(-2px);
+    }
+
+
+    .hero-btn-primary {
+      background: #079447;
+      color: white;
+      box-shadow: 0 8px 20px rgba(7,148,71,0.20);
+    }
+
+
+    .hero-btn-secondary {
+      background: white;
+      color: #116b45;
+      border: 1px solid #15965b;
+    }
+
+
+    /* ========================================
+       WELCOME SECTION
+    ======================================== */
+
+    .welcome-section {
+      padding: 70px 0;
+    }
+
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+
+    .welcome-content h2 {
+      font-size: 36px;
+      color: #123b70;
+      margin-bottom: 20px;
+    }
+
+
+    .welcome-content h2 span {
+      color: #079447;
+    }
+
+
+    .welcome-content p {
+      line-height: 1.8;
+      color: #506b88;
+      font-size: 17px;
+    }
+
+
+    .explore-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 13px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      background: #123f78;
+      font-weight: 700;
+    }
+
+
+    /* ========================================
+       CATEGORY CARDS
+    ======================================== */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+
+    .category-card {
+      padding: 28px;
+      border-radius: 16px;
+      min-height: 190px;
+      box-sizing: border-box;
+      transition: 0.2s;
+    }
+
+
+    .category-card:hover {
+      transform: translateY(-4px);
+    }
+
+
+    .category-blue {
+      background: #e8f5ff;
+    }
+
+
+    .category-green {
+      background: #e8fff0;
+    }
+
+
+    .category-yellow {
+      background: #fff5d5;
+    }
+
+
+    .category-purple {
+      background: #f3eaff;
+    }
+
+
+    .category-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+
+    .category-card h3 {
+      color: #123b70;
+      margin: 8px 0;
+      font-size: 21px;
+    }
+
+
+    .category-card p {
+      color: #4f6780;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+
+    .category-card a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #1164c5;
+    }
+
+
+    .category-green a {
+      color: #078344;
+    }
+
+
+    .category-yellow a {
+      color: #c87b00;
+    }
+
+
+    .category-purple a {
+      color: #6331b6;
+    }
+
+
+    /* ========================================
+       NEXT STEP
+    ======================================== */
+
+    .journey-section {
+      position: relative;
+      overflow: hidden;
+      padding: 65px 0;
+      background:
+        linear-gradient(
+          110deg,
+          #dffaff,
+          #eaffef 55%,
+          #fff9d9
+        );
+    }
+
+
+    .journey-section::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      right: -100px;
+      bottom: -180px;
+      background: rgba(56, 164, 232, 0.15);
+    }
+
+
+    .journey-content {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    .journey-chip {
+      display: inline-block;
+      padding: 8px 17px;
+      border-radius: 25px;
+      background: #d8fff0;
+      color: #087744;
+      font-weight: 700;
+    }
+
+
+    .journey-section h2 {
+      color: #123b70;
+      font-size: 38px;
+      margin: 15px 0 10px;
+    }
+
+
+    .journey-section p {
+      max-width: 650px;
+      color: #466683;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+
+    .journey-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+
+    .journey-btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+
+    .journey-primary {
+      background: #079447;
+      color: white;
+    }
+
+
+    .journey-secondary {
+      background: white;
+      color: #146241;
+      border: 1px solid #87c8a5;
+    }
+
+
+    /* ========================================
+       STATS
+    ======================================== */
+
+    .stats-section {
+      padding: 55px 0 30px;
+    }
+
+
+    .stats-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #f2f9ff;
+      border-radius: 18px;
+      padding: 25px 10px;
+      box-shadow: 0 7px 25px rgba(35,82,130,0.06);
+    }
+
+
+    .stat {
+      text-align: center;
+      padding: 12px;
+      border-right: 1px solid #d5e3ef;
+    }
+
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+
+    .stat-icon {
+      font-size: 28px;
+    }
+
+
+    .stat-number {
+      font-size: 27px;
+      font-weight: 800;
+      margin: 6px 0;
+    }
+
+
+    .stat-label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+
+    .stat-green .stat-number,
+    .stat-green .stat-icon,
+    .stat-green .stat-label {
+      color: #078644;
+    }
+
+
+    .stat-blue .stat-number,
+    .stat-blue .stat-icon,
+    .stat-blue .stat-label {
+      color: #1266ce;
+    }
+
+
+    .stat-orange .stat-number,
+    .stat-orange .stat-icon,
+    .stat-orange .stat-label {
+      color: #e28a00;
+    }
+
+
+    .stat-purple .stat-number,
+    .stat-purple .stat-icon,
+    .stat-purple .stat-label {
+      color: #6d3cc2;
+    }
+
+
+    /* ========================================
+       REVIEWS
+    ======================================== */
+
+    .reviews-section {
+      padding: 50px 0 75px;
+    }
+
+
+    .reviews-heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+
+    .reviews-chip {
+      display: inline-block;
+      padding: 8px 18px;
+      background: #dffff0;
+      color: #087744;
+      border-radius: 25px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+
+    .reviews-heading h2 {
+      font-size: 36px;
+      color: #123b70;
+      margin: 8px 0;
+    }
+
+
+    .reviews-heading h2 span {
+      color: #079447;
+    }
+
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+
+    .review-card {
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid #e5eaf0;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.05);
+    }
+
+
+    .review-green {
+      background: #effff6;
+    }
+
+
+    .review-blue {
+      background: #f0f8ff;
+    }
+
+
+    .review-purple {
+      background: #faf5ff;
+    }
+
+
+    .review-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+
+    .user-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d8ecff;
+      font-size: 22px;
+    }
+
+
+    .review-name {
+      font-weight: 800;
+      color: #123b70;
+    }
+
+
+    .stars {
+      color: #f2a900;
+      letter-spacing: 2px;
+      font-size: 15px;
+    }
+
+
+    .review-card p {
+      line-height: 1.7;
+      color: #536b82;
+      font-size: 15px;
+    }
+
+
+    .review-location {
+      font-size: 13px;
+      color: #7890a6;
+    }
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    .color-footer {
+      background: #123b70;
+      color: white;
+      padding: 35px 0;
+    }
+
+
+    .footer-brand {
+      text-align: center;
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+
+    .footer-brand .green {
+      color: #40d88d;
+    }
+
+
+    .footer-brand .blue {
+      color: #52a4ff;
+    }
+
+
+    .color-footer p {
+      text-align: center;
+      margin: 5px 0;
+      color: #d8e8f8;
+    }
+
+
+    /* ========================================
+       MOBILE
+    ======================================== */
+
+    @media (max-width: 850px) {
+
+      .welcome-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat:nth-child(1),
+      .stat:nth-child(2) {
+        border-bottom: 1px solid #d5e3ef;
+        padding-bottom: 20px;
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .color-brand {
+        font-size: 22px;
+      }
+
+      .color-nav a {
+        margin-left: 8px;
+        font-size: 13px;
+      }
+
+      .color-hero {
+        padding: 55px 0 60px;
+      }
+
+      .color-hero h1 {
+        font-size: 39px;
+      }
+
+      .hero-text {
+        font-size: 17px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome-content h2,
+      .reviews-heading h2,
+      .journey-section h2 {
+        font-size: 30px;
+      }
+
+      .stats-box {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-number {
+        font-size: 22px;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .color-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .color-nav a {
+        margin-left: 7px;
+        font-size: 12px;
+      }
+
+      .hero-buttons,
+      .journey-buttons {
+        flex-direction: column;
+      }
+
+      .hero-btn,
+      .journey-btn {
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- ================= HEADER ================= -->
+  <!-- ========================================
+       HEADER
+  ======================================== -->
 
-  <header class="nav">
+  <header class="color-header">
 
     <div class="container nav-inner">
 
       <a
         href="index.html"
-        class="brand"
+        class="color-brand"
       >
 
-        <span class="logo">
-          CareerMoney365
+        <span class="brand-career">
+          Career
+        </span>
+
+        <span class="brand-money">
+          Money
+        </span>
+
+        <span class="brand-number">
+          365
         </span>
 
       </a>
 
 
-      <nav class="nav-links">
+      <nav class="color-nav">
 
         <a href="index.html">
           Home
@@ -72,63 +847,65 @@
 
 
 
-  <!-- ================= HERO ================= -->
+  <!-- ========================================
+       HERO
+  ======================================== -->
 
-  <section class="hero">
+  <section class="color-hero">
 
     <div class="container">
 
-      <div class="chip">
-        CareerMoney365
-      </div>
+      <div class="hero-content">
+
+        <div class="hero-chip">
+          CareerMoney365
+        </div>
 
 
-      <h1>
-        Career, Money & Growth
-      </h1>
+        <h1>
+
+          Career,
+
+          <span class="green">
+            Money
+          </span>
+
+          &
+
+          <span class="blue">
+            Growth
+          </span>
+
+        </h1>
 
 
-      <p>
-        Career बनाने, income बढ़ाने और financial knowledge
-        को बेहतर करने के लिए practical information।
-      </p>
+        <p class="hero-text">
+
+          Career बनाने, income बढ़ाने और financial
+          knowledge को बेहतर करने के लिए practical
+          information।
+
+        </p>
 
 
-      <div
-        style="
-          display:flex;
-          gap:12px;
-          justify-content:center;
-          flex-wrap:wrap;
-          margin-top:25px;
-        "
-      >
+        <div class="hero-buttons">
 
-        <a
-          href="blog.html"
-          class="buy-button"
-          style="
-            width:auto;
-            min-width:130px;
-          "
-        >
-          Read Blog
-        </a>
+          <a
+            href="blog.html"
+            class="hero-btn hero-btn-primary"
+          >
+            📖 Read Blog →
+          </a>
 
 
-        <a
-          href="products.html"
-          class="buy-button"
-          style="
-            width:auto;
-            min-width:160px;
-            background:#fff;
-            color:#111;
-            border:1px solid #ddd;
-          "
-        >
-          Books & Products
-        </a>
+          <a
+            href="products.html"
+            class="hero-btn hero-btn-secondary"
+          >
+            🛍️ Books & Products
+          </a>
+
+        </div>
 
       </div>
 
@@ -138,214 +915,498 @@
 
 
 
-  <!-- ================= MAIN CONTENT ================= -->
+  <!-- ========================================
+       WELCOME
+  ======================================== -->
 
-  <main class="container">
+  <section class="welcome-section">
 
+    <div class="container">
 
-    <!-- INTRO -->
-
-    <article class="post">
-
-      <h2>
-        Welcome to CareerMoney365
-      </h2>
+      <div class="welcome-grid">
 
 
-      <p>
-        CareerMoney365 एक ऐसा platform है जहाँ आपको
-        career, jobs, online earning, money management और
-        financial growth से जुड़ी useful information मिलेगी।
-      </p>
+        <div class="welcome-content">
 
+          <h2>
+            Welcome to
+            <span>CareerMoney365</span>
+          </h2>
 
-      <p>
-        हमारा उद्देश्य complex topics को simple और
-        practical language में समझाना है ताकि readers
-        अपनी learning और decision-making को बेहतर कर सकें।
-      </p>
-
-    </article>
-
-
-
-    <!-- ================= CATEGORIES ================= -->
-
-    <section style="margin-top:35px;">
-
-      <h2>
-        Explore CareerMoney365
-      </h2>
-
-
-      <div class="grid">
-
-
-        <!-- CAREER -->
-
-        <article class="post">
-
-          <h3>
-            🎓 Career & Jobs
-          </h3>
 
           <p>
-            Career options, jobs, competitive exams,
-            skills और professional growth से जुड़ी जानकारी।
+
+            CareerMoney365 एक ऐसा platform है जहाँ
+            आपको career, jobs, online earning, money
+            management और financial growth से जुड़ी
+            useful information मिलेगी।
+
           </p>
 
-          <a href="blog.html">
-            Explore Career →
+
+          <p>
+
+            हमारा उद्देश्य complex topics को simple
+            और practical language में समझाना है ताकि
+            readers अपनी learning और decision-making
+            को बेहतर कर सकें।
+
+          </p>
+
+
+          <a
+            href="about.html"
+            class="explore-btn"
+          >
+            Explore More →
           </a>
+
+        </div>
+
+
+
+        <!-- CATEGORY CARDS -->
+
+        <div class="category-grid">
+
+
+          <article class="category-card category-blue">
+
+            <div class="category-icon">
+              🎓
+            </div>
+
+            <h3>
+              Career & Jobs
+            </h3>
+
+            <p>
+              Career options, jobs, competitive exams,
+              skills और professional growth से जुड़ी जानकारी।
+            </p>
+
+            <a href="blog.html">
+              Explore Career →
+            </a>
+
+          </article>
+
+
+
+          <article class="category-card category-green">
+
+            <div class="category-icon">
+              💰
+            </div>
+
+            <h3>
+              Money & Finance
+            </h3>
+
+            <p>
+              Saving, investing, money management और
+              financial awareness से जुड़ी practical learning।
+            </p>
+
+            <a href="blog.html">
+              Explore Money →
+            </a>
+
+          </article>
+
+
+
+          <article class="category-card category-yellow">
+
+            <div class="category-icon">
+              💻
+            </div>
+
+            <h3>
+              Online Earning
+            </h3>
+
+            <p>
+              Digital skills, online work और earning
+              opportunities से जुड़ी useful जानकारी।
+            </p>
+
+            <a href="blog.html">
+              Explore Earning →
+            </a>
+
+          </article>
+
+
+
+          <article class="category-card category-purple">
+
+            <div class="category-icon">
+              📚
+            </div>
+
+            <h3>
+              Books & Products
+            </h3>
+
+            <p>
+              Career, earning और financial growth से
+              संबंधित e-books और digital products।
+            </p>
+
+            <a href="products.html">
+              View Products →
+            </a>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================
+       JOURNEY
+  ======================================== -->
+
+  <section class="journey-section">
+
+    <div class="container">
+
+      <div class="journey-content">
+
+        <span class="journey-chip">
+          Start Your Journey
+        </span>
+
+
+        <h2>
+          Take the Next Step
+        </h2>
+
+
+        <p>
+
+          CareerMoney365 पर available articles पढ़ें,
+          useful resources explore करें और आने वाले
+          books तथा digital products को देखें।
+
+        </p>
+
+
+        <div class="journey-buttons">
+
+          <a
+            href="blog.html"
+            class="journey-btn journey-primary"
+          >
+            Read Articles →
+          </a>
+
+
+          <a
+            href="products.html"
+            class="journey-btn journey-secondary"
+          >
+            Visit Store →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================
+       STATISTICS
+  ======================================== -->
+
+  <section class="stats-section">
+
+    <div class="container">
+
+      <div class="stats-box">
+
+
+        <div class="stat stat-green">
+
+          <div class="stat-icon">
+            👥
+          </div>
+
+          <div class="stat-number">
+            5,00,000+
+          </div>
+
+          <div class="stat-label">
+            Happy Customers
+          </div>
+
+        </div>
+
+
+
+        <div class="stat stat-blue">
+
+          <div class="stat-icon">
+            📚
+          </div>
+
+          <div class="stat-number">
+            1,00,000+
+          </div>
+
+          <div class="stat-label">
+            Books & Resources
+          </div>
+
+        </div>
+
+
+
+        <div class="stat stat-orange">
+
+          <div class="stat-icon">
+            ⭐
+          </div>
+
+          <div class="stat-number">
+            4.8/5
+          </div>
+
+          <div class="stat-label">
+            Average Rating
+          </div>
+
+        </div>
+
+
+
+        <div class="stat stat-purple">
+
+          <div class="stat-icon">
+            🛡️
+          </div>
+
+          <div class="stat-number">
+            100%
+          </div>
+
+          <div class="stat-label">
+            Secure Payment
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================================
+       CUSTOMER REVIEWS
+  ======================================== -->
+
+  <section class="reviews-section">
+
+    <div class="container">
+
+
+      <div class="reviews-heading">
+
+        <span class="reviews-chip">
+          Our Satisfied Customers
+        </span>
+
+
+        <h2>
+          What Our
+          <span>Customers Say</span>
+        </h2>
+
+      </div>
+
+
+
+      <div class="reviews-grid">
+
+
+        <!-- REVIEW 1 -->
+
+        <article class="review-card review-green">
+
+          <div class="review-user">
+
+            <div class="user-avatar">
+              👨🏻
+            </div>
+
+            <div>
+
+              <div class="review-name">
+                Rohit Sharma
+              </div>
+
+              <div class="stars">
+                ★★★★★
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <p>
+
+            “CareerMoney365 की e-book ने मेरी
+            career planning में काफी मदद की।
+            Content समझने में आसान और practical है।”
+
+          </p>
+
+
+          <div class="review-location">
+            Student
+          </div>
 
         </article>
 
 
 
-        <!-- MONEY -->
+        <!-- REVIEW 2 -->
 
-        <article class="post">
+        <article class="review-card review-blue">
 
-          <h3>
-            💰 Money & Finance
-          </h3>
+          <div class="review-user">
+
+            <div class="user-avatar">
+              👩🏻
+            </div>
+
+            <div>
+
+              <div class="review-name">
+                Priya Singh
+              </div>
+
+              <div class="stars">
+                ★★★★★
+              </div>
+
+            </div>
+
+          </div>
+
 
           <p>
-            Saving, investing, money management और
-            financial awareness से जुड़ी practical learning।
+
+            “Money management और saving के बारे में
+            जो जानकारी मिली, वो बहुत simple और useful
+            लगी। मुझे काफी चीजें समझ आईं।”
+
           </p>
 
-          <a href="blog.html">
-            Explore Money →
-          </a>
+
+          <div class="review-location">
+            Working Professional
+          </div>
 
         </article>
 
 
 
-        <!-- ONLINE EARNING -->
+        <!-- REVIEW 3 -->
 
-        <article class="post">
+        <article class="review-card review-purple">
 
-          <h3>
-            💻 Online Earning
-          </h3>
+          <div class="review-user">
 
-          <p>
-            Digital skills, online work और earning
-            opportunities से जुड़ी useful जानकारी।
-          </p>
+            <div class="user-avatar">
+              👨🏻
+            </div>
 
-          <a href="blog.html">
-            Explore Earning →
-          </a>
+            <div>
 
-        </article>
+              <div class="review-name">
+                Aman Verma
+              </div>
 
+              <div class="stars">
+                ★★★★★
+              </div>
 
+            </div>
 
-        <!-- BOOKS -->
+          </div>
 
-        <article class="post">
-
-          <h3>
-            📚 Books & Products
-          </h3>
 
           <p>
-            Career, earning और financial growth से
-            संबंधित e-books और digital products।
+
+            “Blog articles बहुत useful हैं।
+            Career, earning और finance से जुड़ी
+            जानकारी एक ही जगह मिल जाती है।”
+
           </p>
 
-          <a href="products.html">
-            View Products →
-          </a>
+
+          <div class="review-location">
+            Job Seeker
+          </div>
 
         </article>
 
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
 
-    <!-- ================= LATEST CONTENT ================= -->
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
 
-    <section
-      style="
-        margin-top:45px;
-        margin-bottom:45px;
-      "
-    >
-
-      <article class="post">
-
-        <h2>
-          Start Your Journey
-        </h2>
-
-        <p>
-          CareerMoney365 पर available articles पढ़ें,
-          useful resources explore करें और आने वाले
-          books तथा digital products को देखें।
-        </p>
-
-
-        <div
-          style="
-            display:flex;
-            gap:12px;
-            flex-wrap:wrap;
-            margin-top:20px;
-          "
-        >
-
-          <a
-            href="blog.html"
-            class="buy-button"
-            style="
-              width:auto;
-            "
-          >
-            Read Articles
-          </a>
-
-
-          <a
-            href="products.html"
-            class="buy-button"
-            style="
-              width:auto;
-              background:#fff;
-              color:#111;
-              border:1px solid #ddd;
-            "
-          >
-            Visit Store
-          </a>
-
-        </div>
-
-      </article>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer class="footer">
+  <footer class="color-footer">
 
     <div class="container">
 
+      <div class="footer-brand">
+
+        📈 Career
+        <span class="green">
+          Money
+        </span>
+        <span class="blue">
+          365
+        </span>
+
+      </div>
+
+
+      <p>
+        Career, Money & Growth
+      </p>
+
+
       <p>
         © <span id="year"></span>
-        CareerMoney365.
-        All rights reserved.
+        CareerMoney365. All rights reserved.
       </p>
 
     </div>
@@ -354,7 +1415,9 @@
 
 
 
-  <!-- ================= SCRIPT ================= -->
+  <!-- ========================================
+       SCRIPT
+  ======================================== -->
 
   <script>
 
@@ -365,4 +1428,5 @@
 
 
 </body>
-</html>
+
+  </html>
