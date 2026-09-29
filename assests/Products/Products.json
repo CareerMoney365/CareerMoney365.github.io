@@ -4,7 +4,8 @@
     "name": "CareerMoney365 E-Book",
     "description": "Career, earning और financial freedom से जुड़ी practical guide.",
     "price": 99,
+    "category": "E-Book",
     "image": "assests/feat.jpg",
-    "paymentLink": "#"
+    "paymentLink": "YOUR_RAZORPAY_PAYMENT_LINK"
   }
 ]
