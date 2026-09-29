@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Payment Successful | CareerMoney365</title>
+
+  <meta
+    name="description"
+    content="Thank you for your purchase from CareerMoney365."
+  >
+
+  <link rel="stylesheet" href="assests/style.css">
+
+  <style>
+
+    .success-wrapper {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+    }
+
+    .success-card {
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+      background: #fff;
+      padding: 45px 30px;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      border: 1px solid #eee;
+    }
+
+    .success-icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .success-card h1 {
+      margin-bottom: 15px;
+    }
+
+    .success-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .success-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 24px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="nav">
+
+    <div class="container nav-inner">
+
+      <a href="index.html" class="brand">
+        <span class="logo">
+          CareerMoney365
+        </span>
+      </a>
+
+      <nav class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="blog.html">
+          Blog
+        </a>
+
+        <a href="products.html">
+          Books & Products
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- SUCCESS -->
+
+  <main class="success-wrapper">
+
+    <div class="success-card">
+
+      <div class="success-icon">
+        ✅
+      </div>
+
+      <h1>
+        Payment Successful!
+      </h1>
+
+      <p>
+        Thank you for purchasing from
+        <strong>CareerMoney365</strong>.
+      </p>
+
+      <p>
+        आपका payment successfully receive होने के बाद
+        आपकी purchased e-book की delivery process की जाएगी।
+      </p>
+
+      <p>
+        यदि आपको अपनी purchase से संबंधित कोई समस्या आती है,
+        तो कृपया हमारे contact page से हमसे संपर्क करें।
+      </p>
+
+      <a
+        href="products.html"
+        class="success-button"
+      >
+        Back to Books & Products
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <p>
+        © <span id="year"></span>
+        CareerMoney365.
+        All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+
+</body>
+</html>
